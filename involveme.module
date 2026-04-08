@@ -24,6 +24,7 @@ function involveme_theme(): array {
  * block is present.
  */
 function involveme_page_attachments(array &$attachments): void {
+  $attachments['#cache']['tags'][] = 'config:involveme.settings';
   $company_name = \Drupal::config('involveme.settings')->get('company_name');
   if (!empty($company_name)) {
     $attachments['#attached']['library'][] = 'involveme/popup';
