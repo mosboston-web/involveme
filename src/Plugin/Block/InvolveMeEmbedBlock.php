@@ -71,6 +71,13 @@ class InvolveMeEmbedBlock extends BlockBase implements ContainerFactoryPluginInt
   /**
    * {@inheritdoc}
    */
+  public function getCacheTags(): array {
+    return Cache::mergeTags(parent::getCacheTags(), ['config:involveme.settings']);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function defaultConfiguration(): array {
     return [
       'project_id' => '',
@@ -161,10 +168,6 @@ class InvolveMeEmbedBlock extends BlockBase implements ContainerFactoryPluginInt
         '#project_id' => $project_id,
         '#wrapper_classes' => $wrapper_classes,
         '#attached' => [
-          'library' => ['involveme/popup'],
-          'drupalSettings' => [
-            'involveme' => ['organizationUrl' => $org_url],
-          ],
           'html_head' => [
             [
               [
