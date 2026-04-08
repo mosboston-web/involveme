@@ -249,7 +249,7 @@ class InvolveMeEmbedBlock extends BlockBase implements ContainerFactoryPluginInt
     $project_label = $project_id ?: '(no project set)';
     $label = 'Involve.me — ' . $type_label . ': ' . $project_label;
     return [
-      '#markup' => htmlspecialchars($label, ENT_QUOTES, 'UTF-8'),
+      '#plain_text' => $label,
     ];
   }
 
