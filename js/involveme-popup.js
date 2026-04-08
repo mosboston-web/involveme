@@ -62,8 +62,16 @@
         script.src = `${orgUrl}/embed?type=popup`;
         if (popupTriggers.length > 0) {
           script.addEventListener('load', () => {
+            const createTriggerEvent =
+              window.involvemeEmbedPopup?.createTriggerEvent;
+
+            if (typeof createTriggerEvent !== 'function') {
+              console.warn('Involve.me popup API is unavailable after script load.');
+              return;
+            }
+
             popupTriggers.forEach((config) => {
-              window.involvemeEmbedPopup.createTriggerEvent(config);
+              createTriggerEvent(config);
             });
           });
         }
