@@ -1,0 +1,7 @@
+popup:
+  js:
+    js/involveme-popup.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/drupalSettings

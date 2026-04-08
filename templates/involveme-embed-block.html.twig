@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for the Involve.me Direct Embed block.
+ *
+ * Used only when embed type is "Direct Embed". Popup types render their
+ * output entirely via html_head script attachments and do not use this
+ * template.
+ *
+ * Available variables:
+ * - project_id: The Involve.me project slug (e.g. "pi-day").
+ * - wrapper_classes: CSS classes for the outer wrapper div (from module config).
+ */
+#}
+<div class="{{ wrapper_classes }}">
+  <div class="involveme_embed" data-project="{{ project_id }}" data-title="{{ project_id }}"></div>
+</div>

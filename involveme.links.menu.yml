@@ -1,0 +1,5 @@
+involveme.settings:
+  title: 'Involve.me'
+  description: 'Configure the Involve.me embed and popup integration.'
+  parent: system.admin_config_services
+  route_name: involveme.settings

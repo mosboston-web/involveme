@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * @file
+ * Provides Involve.me embed and popup integration.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function involveme_theme(): array {
+  return [
+    'involveme_embed_block' => [
+      'variables' => ['project_id' => NULL, 'wrapper_classes' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Attaches the popup JS library and organization URL on every page so the
+ * behavior can scan for ?involveid= links regardless of whether an Involve.me
+ * block is present.
+ */
+function involveme_page_attachments(array &$attachments): void {
+  $company_name = \Drupal::config('involveme.settings')->get('company_name');
+  if (!empty($company_name)) {
+    $attachments['#attached']['library'][] = 'involveme/popup';
+    $attachments['#attached']['drupalSettings']['involveme']['organizationUrl'] = 'https://' . $company_name . '.involve.me';
+  }
+}
