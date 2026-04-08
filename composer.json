@@ -1,0 +1,8 @@
+{
+  "name": "mosboston-web/involveme",
+  "type": "drupal-module",
+  "description": "Involve.me block integration.",
+  "require": {
+    "drupal/core": "^10 || ^11"
+  }
+}

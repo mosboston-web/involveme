@@ -1,0 +1,7 @@
+involveme.settings:
+  path: '/admin/config/services/involveme'
+  defaults:
+    _title: 'Involve.me Settings'
+    _form: '\Drupal\involveme\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
