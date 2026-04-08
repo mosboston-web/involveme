@@ -1,0 +1,10 @@
+involveme.settings:
+  type: config_object
+  label: 'Involve.me settings'
+  mapping:
+    company_name:
+      type: string
+      label: 'Company name'
+    embed_wrapper_classes:
+      type: string
+      label: 'Embed wrapper classes'

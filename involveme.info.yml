@@ -1,0 +1,7 @@
+name: Involve.me Integration
+type: module
+description: Provides integration with Involve.me for embedded projects and popup forms.
+package: Other
+core_version_requirement: ^10 | ^11
+dependencies:
+  - drupal:block
