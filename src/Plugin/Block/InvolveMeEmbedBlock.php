@@ -77,6 +77,20 @@ class InvolveMeEmbedBlock extends BlockBase implements ContainerFactoryPluginInt
 
   /**
    * {@inheritdoc}
+   *
+   * Overridden to return a dot-free suggestion. The default implementation
+   * derives the name from the admin label ("Involve.me Embed"), which produces
+   * a suggestion containing a dot. The dot causes BlockAddForm's CONTAINS query
+   * in getUniqueMachineName() to fail to match the already-placed block, so
+   * every subsequent placement receives the same ID and triggers an
+   * EntityStorageException.
+   */
+  public function getMachineNameSuggestion(): string {
+    return 'involveme_embed';
+  }
+
+  /**
+   * {@inheritdoc}
    */
   public function defaultConfiguration(): array {
     return [
